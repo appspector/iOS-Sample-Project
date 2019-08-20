@@ -14,6 +14,8 @@
 #import <TwitterKit/TwitterKit.h>
 #import "XKCDDeviceManager.h"
 
+#import <AppSpectorSDK/AppSpectorSDK.h>
+
 @import StoreKit;
 
 static NSString * const kAppStoreURLString = @"itms-apps://itunes.apple.com/app/id995811425";
@@ -36,6 +38,10 @@ static NSTimeInterval const kFourMonthsInSeconds = 10368000;
 #pragma mark - App life cycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Start AppSpector, paste your API key from app settings here
+    AppSpectorConfig *config = [AppSpectorConfig configWithAPIKey:@"ios_NjNlNGQwNzAtYmZjNS00YjYxLTk5NWEtODNmMGUzYmE1Njkw"];
+    [AppSpector runWithConfig:config];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 

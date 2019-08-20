@@ -11,6 +11,8 @@ end
 
 target 'xkcd Open Source' do
  myPods
+
+ pod 'AppSpectorSDK'
 end
 
 target 'xkcdToday' do
